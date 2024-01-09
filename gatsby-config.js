@@ -6,5 +6,5 @@ module.exports = {
     title: `Seungwan Personal Blog`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [],
-}
+  plugins: ['gatsby-plugin-image', 'gatsby-plugin-sharp'],
+};
