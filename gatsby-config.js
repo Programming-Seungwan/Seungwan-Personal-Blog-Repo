@@ -6,5 +6,15 @@ module.exports = {
     title: `Seungwan Personal Blog`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: ['gatsby-plugin-image', 'gatsby-plugin-sharp'],
+  plugins: [
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`,
+      },
+    },
+  ],
 };
