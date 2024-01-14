@@ -1,3 +1,86 @@
 .navBar {
-  width: 30%;
+  width: 27%;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+    url('/images/diego-ph-fIq0tET6llw-unsplash.jpg');
+  background-position: 80% 75%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  z-index: 10;
+  position: relative;
+  padding-top: 30px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navHeader {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navHeader a {
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.navMain {
+  flex-grow: 7;
+  display: flex;
+  flex-direction: column;
+}
+
+.navMain > span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navMain a {
+  flex: 1;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.navMain a span {
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.navMain a:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.navFooter {
+  flex-grow: 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+  gap: 5px;
+}
+
+.gatsbyLogo {
+  width: 25px;
+  height: 25px;
+}
+
+.graphQLLogo {
+  width: 25px;
+  height: 25px;
+}
+
+.contentfulLogo {
+  width: 25px;
+  height: 25px;
 }
