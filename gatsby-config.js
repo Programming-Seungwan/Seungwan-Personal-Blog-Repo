@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `Seungwan Personal Blog`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://seungwan-blog.netlify.app/`,
   },
   plugins: [
     'gatsby-plugin-image',

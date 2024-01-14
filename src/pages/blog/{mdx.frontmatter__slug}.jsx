@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import Layout from '../../components/layout';
-import Seo from '../../components/seo';
+import Layout from '../../components/layout.jsx';
+import Seo from '../../components/seo.jsx';
 
 const BlogPost = ({ data, children }) => {
   // getImage 함수는 복잡하게 객체 속성 다 파고갈 필요 없이 이미지를 얻어오게 도와준다
