@@ -62,3 +62,7 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+:root {
+  --background-color1: #f4f7f6;
+}
