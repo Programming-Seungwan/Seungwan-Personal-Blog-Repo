@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { container } from './layout.module.css';
-import Navbar from './navigation/navbar.jsx';
+import Navbar from '../navigation/navbar.jsx';
 
 const Layout = ({ pageTitle, children }) => {
   return (

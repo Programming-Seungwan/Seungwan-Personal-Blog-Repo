@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Layout from '../../components/layout';
+import Layout from '../../components/Layout/layout.jsx';
 import MainContent from '../../components/main-content/main-content';
 
 export default function SportsPage() {

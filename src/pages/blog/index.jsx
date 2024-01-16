@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link, graphql } from 'gatsby';
-import Layout from '../../components/layout.jsx';
+import Layout from '../../components/Layout/layout.jsx';
 import Seo from '../../components/seo.jsx';
 
 const BlogPage = ({ data }) => {
