@@ -1,0 +1,16 @@
+.fixedHeaderContainer {
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: inherit;
+  outline: 1px solid black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 25px;
+  background-color: white;
+}
+
+.fixedHeaderContainer span {
+  font-weight: 600;
+}
