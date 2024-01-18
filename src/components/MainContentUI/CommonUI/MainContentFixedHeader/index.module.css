@@ -8,9 +8,22 @@
   justify-content: flex-end;
   align-items: center;
   padding-right: 25px;
+  padding-left: 25px;
   background-color: white;
 }
 
 .fixedHeaderContainer span {
   font-weight: 600;
+}
+
+@media screen and (min-width: 769px) {
+  .hamburgerMenuBar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .fixedHeaderContainer {
+    justify-content: space-between;
+  }
 }

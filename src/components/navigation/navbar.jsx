@@ -1,12 +1,16 @@
 import * as React from 'react';
-import { navBar } from './navbar.module.css';
+import { navBar, hamburgerButtonClickedNavBar } from './navbar.module.css';
 import NavHeader from './navHeader';
 import Navmain from './navMain';
 import NavFooter from './navFooter';
+import { useRecoilState } from 'recoil';
+import { hamburgerButtonClickedState } from '../../state/atom';
 
 export default function Navbar() {
+  const [isHamburgerButtonClicked, setIsHamburgerButtonClicked] = useRecoilState(hamburgerButtonClickedState);
+
   return (
-    <div className={navBar}>
+    <div className={!isHamburgerButtonClicked ? navBar : hamburgerButtonClickedNavBar}>
       <NavHeader />
       <Navmain />
       <NavFooter />
