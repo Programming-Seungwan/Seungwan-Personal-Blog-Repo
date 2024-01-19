@@ -1,0 +1,9 @@
+.homeExplainPara {
+  font-size: 25px;
+  font-weight: 550;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  word-wrap: break-word;
+}

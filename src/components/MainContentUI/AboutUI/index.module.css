@@ -1,0 +1,14 @@
+.aboutMeDiv {
+  font-size: 30px;
+  font-weight: 600;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.selfDescript {
+  font-size: 22px;
+  font-weight: 350;
+  color: rgba(0, 0, 0, 0.5);
+  word-wrap: break-word;
+  text-align: center;
+}

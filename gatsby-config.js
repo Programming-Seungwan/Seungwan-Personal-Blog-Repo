@@ -1,3 +1,4 @@
+require('dotenv').config();
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -14,6 +15,14 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.SPACE_ID,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.DELIVERY_ACCESS_TOKEN,
       },
     },
     'gatsby-plugin-mdx',

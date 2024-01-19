@@ -3,17 +3,20 @@
   top: 0;
   height: 60px;
   width: inherit;
-  outline: 1px solid black;
+  /* outline: 1px solid black; */
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: 25px;
   padding-left: 25px;
+  z-index: 10;
   background-color: white;
+  backdrop-filter: blur(5px);
 }
 
 .fixedHeaderContainer span {
   font-weight: 600;
+  color: #427a7d;
 }
 
 @media screen and (min-width: 769px) {
