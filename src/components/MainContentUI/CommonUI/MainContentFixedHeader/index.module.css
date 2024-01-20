@@ -19,6 +19,10 @@
   color: #427a7d;
 }
 
+.hamburgerMenuBar:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 769px) {
   .hamburgerMenuBar {
     display: none;
