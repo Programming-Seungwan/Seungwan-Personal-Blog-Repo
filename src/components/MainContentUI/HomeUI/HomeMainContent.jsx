@@ -1,6 +1,7 @@
 import * as React from 'react';
 import MainContentFixedHeader from '../CommonUI/MainContentFixedHeader/MainContentFixedHeader';
 import MainContentCategoryExplain from '../CommonUI/MainContentCategoryExplain/MainContentCategoryExplain';
+import MainContentPostsContainer from '../CommonUI/MainContentPostsContainer/MainContentPostsContainer';
 import { homeExplainPara } from './index.module.css';
 
 export default function HomeMainContent() {
@@ -10,6 +11,7 @@ export default function HomeMainContent() {
       <MainContentCategoryExplain>
         <div className={homeExplainPara}>Seungwan Personal Blog</div>
       </MainContentCategoryExplain>
+      <MainContentPostsContainer></MainContentPostsContainer>
     </>
   );
 }

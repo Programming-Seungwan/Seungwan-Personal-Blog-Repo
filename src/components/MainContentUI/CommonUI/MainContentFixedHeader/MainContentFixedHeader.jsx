@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useRecoilState } from 'recoil';
 import { hamburgerButtonClickedState } from '../../../../state/atom';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 export default function MainContentFixedHeader({ category }) {
   const [isHamburgerButtonClicked, setIsHamburgerButtonClicked] = useRecoilState(hamburgerButtonClickedState);

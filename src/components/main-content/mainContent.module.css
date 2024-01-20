@@ -1,4 +1,7 @@
 /* mainContent 컴포넌트는 다양한 children이 올거라서 메타 스타일링만 해주고 자세한건 따로 한다 */
+.mainContent {
+  overflow-y: scroll;
+}
 
 /* 모바일 디바이스에서 */
 @media screen and (max-width: 768px) {
