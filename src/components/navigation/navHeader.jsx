@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { navHeader } from './navbar.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'gatsby';
