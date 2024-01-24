@@ -1,6 +1,7 @@
 import * as React from 'react';
 import MainContentFixedHeader from '../CommonUI/MainContentFixedHeader/MainContentFixedHeader';
 import MainContentCategoryExplain from '../CommonUI/MainContentCategoryExplain/MainContentCategoryExplain';
+import MainContentPostsContainer from '../CommonUI/MainContentPostsContainer/MainContentPostsContainer';
 import { sportsDiv, sportsDescript } from './index.module.css';
 
 export default function SportsMainContent() {
@@ -11,6 +12,7 @@ export default function SportsMainContent() {
         <div className={sportsDiv}>🥊 Sports</div>
         <div className={sportsDescript}>Baseball, Football, Boxing. Happiness of my life</div>
       </MainContentCategoryExplain>
+      <MainContentPostsContainer mainContentType='sports'></MainContentPostsContainer>
     </>
   );
 }

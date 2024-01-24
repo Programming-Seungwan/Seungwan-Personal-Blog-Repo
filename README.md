@@ -6,6 +6,14 @@
 4. /tech : FE 개발 이외의 다른 개발 분야, Computer Science 관련 포스팅
 5. /sports : 개인적으로 흥미 있는 야구, 복싱 등의 이야기
 
+## 플러그인들의 기능
+
+1. gatsby-transformer-remark: 마크다운으로 작성한 문법들을 다시 parsing 하여 gatsbyJS에 녹여내기 위한 플러그인
+2. gatsby-plugin-mdx : mdx로 작서한 것은 특이하게 remark가 아니라 이 라이브러리를 이용해야 함
+3. gatsby-plugin-sharp, gatsby-transformer-sharp : gatsby에서 이미지 최적화를 위해 필요한 라이브러리
+4. gatsby-plugin-image: 위의 두 모듈을 gatsby-config.js에서 설정해주면, 해당 이미지를 컴포넌트로 쓰기 위해 활용되는 플러그인
+5. gatsby-source-contentful : Headless CMS인 contentful에서 컨텐츠를 관리하고 이를 gatsby에 graphQL로 끌어오기 위한 모듈. gatsby-config.js 파일에 spaceID와 accessToken을 활용하면 된다
+
 ## 해결 포인트
 
 1. Fontawesome에서 불러온 이미지들이 초반에 너무 크게 로드되고 그 다음에 사이즈가 맞추어지는 경향이 있음. 이를 어떻게 해결할지? =>
