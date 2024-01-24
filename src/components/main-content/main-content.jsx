@@ -10,7 +10,7 @@ import TravelMainContent from '../MainContentUI/TravelUI/TravelMainContent';
 export default function MainContent({ pageCategory }) {
   return (
     <>
-      <div className={mainContent}>
+      <div className={`${mainContent} scroll-box`}>
         {pageCategory === 'about' && <AboutMainContent />}
         {pageCategory === 'frontend' && <FrontendMainContent />}
         {pageCategory === 'home' && <HomeMainContent />}
