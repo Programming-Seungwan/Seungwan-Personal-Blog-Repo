@@ -21,6 +21,8 @@
 2. 검색엔진 최적화는 매번 Head 컴포넌트를 export 해주는 방식과 react - helmet 모듈을 쓰는 것 중에서 고민해볼 필요가 있다.
 3. 모바일에서 보았을 때, 디폴트로 navbar는 보이지 않고 햄버거 버튼만 보이게 만든다. 그리고 이를 눌렀을 떄 nav bar가 나타나는 방식으로 진행. 눌렀을 때 상태값을 줘서 클래스를 생성. 기존에 모바일에서 봤을 때 처음에는 전체에 햄버거 버튼만 보여야 됨 => 반응형 디자인으로 해결함
 4. mainContentHeader가 fixed 되니까 모바일 화면에서 사이드 네브 바를 열었을 떄, 헤더가 가리는 현상이 발생한다. z-index의 차이를 둬야할 것 같음(해결 완료)
+5. contentful CMS에서 richText로 작성한 내용이 raw 데이터, 즉 그냥 이상한 문자열로만 전달되는 문제 => JSON.parse()를 해줘야 함. 그런데 이것을 그냥 plain text로 렌더하면 보안적으로 문제가 생길 수 있음
+   > @contentful/rich-text-react-renderer 모듈을 통해 리액트 컴포넌트로 활용하면 옵션 설정에 맞게 p, strong 태그 등으로 바꿔줄 수 있음. 옵션은 @contentful/rich-text-types 모듈에서 타입 정의를 끌어와서 하면 됨
 
 ## 페이지들 구현 명세
 
