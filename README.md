@@ -35,3 +35,4 @@
 7. 최대한 css 파일은 이를 필요로 하는 UI 컴포넌트와 근처에 colocate 시킨다
 8. 기본적은 /, /about, /frontend, /post, /sports, /tech, /travel에 해당하는 페이지들은 각 카테고리에 해당하는 포스팅들을 보여주는 기능을 하고, 이들을 누르면 post탭으로 넘어갈 뿐이다.
 9. /about 페이지에 들어갈 컨텐츠는 파일 내의 mdx로서 관리한다
+10. mainContent 내부의 MainContentPostsContainer 컴포넌트는 mainContentType을 속성으로 받으며, 이 속성을 통해 원하는 컨텐츠 목록이 보여진다
