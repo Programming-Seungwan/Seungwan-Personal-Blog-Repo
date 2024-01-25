@@ -1,6 +1,11 @@
 .postThumbNailCardAnchor {
-  width: auto;
-  height: auto;
+  display: block;
+  width: 85%;
+  height: 45vh;
+  text-decoration: none;
+  color: black;
+  padding: 10px 5px;
+  overflow: hidden;
 }
 
 .postThumbNailCardContainer {
@@ -8,40 +13,95 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  height: 100%;
 }
 
 .postThumbNailCardTitle {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 600;
+  color: #427a7d;
 }
 
 .postThumbNailCardWrittenDate {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
+  gap: 9px;
+  color: #aaaaaa;
+}
+
+.postThumbNailCardWrittenDate::before {
+  background: #aaaaaa;
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+}
+
+.postThumbNailCardWrittenDate::after {
+  background: #aaaaaa;
+  content: ' ';
+  height: 1px;
+  flex-grow: 1;
 }
 
 .postThumbNailCardPreviewThumbnail {
   display: flex;
   align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+  margin-top: 50px;
 }
 
 .previewImage {
-  flex-grow: 1;
-}
-
-.previewSummaryAndTagsContainer {
-  flex-grow: 1;
+  height: 100%;
+  width: 40%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.previewSummary {
-  flex-grow: 1;
+.previewSummaryAndTagsContainer {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.previewTags {
-  flex-grow: 1;
+.previewSummary {
+  font-size: 0.95rem;
+  color: rgb(72, 72, 72);
+  line-height: 1.7;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-align: justify;
+  overflow-wrap: anywhere;
+}
+
+.previewTags ul {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  row-gap: 3px;
+  flex-wrap: wrap;
+}
+
+.hashtag {
+  margin-right: 10px;
+  background-color: #efeded;
+  padding: 3px 5px;
+  border-radius: 10%;
 }

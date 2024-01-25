@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import moment from 'moment';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import {
@@ -12,6 +12,7 @@ import {
   previewSummaryAndTagsContainer,
   previewSummary,
   previewTags,
+  hashtag,
 } from './index.module.css';
 
 export default function PostThumbNailCardUI({
@@ -22,8 +23,6 @@ export default function PostThumbNailCardUI({
   slug,
   tagsList,
 }) {
-  const image = getImage(thumbnailImageSrc);
-
   const options = {
     renderMark: {
       [MARKS.BOLD]: (text) => <strong>{text}</strong>,
@@ -41,7 +40,7 @@ export default function PostThumbNailCardUI({
     <a href={`/post/${slug}`} className={postThumbNailCardAnchor}>
       <div className={postThumbNailCardContainer}>
         <div className={postThumbNailCardTitle}>{title}</div>
-        <div className={postThumbNailCardWrittenDate}>{writtenTime}</div>
+        <div className={postThumbNailCardWrittenDate}>{moment(writtenTime).format('MMM Do YY')}</div>
         <div className={postThumbNailCardPreviewThumbnail}>
           <div className={previewImage}>
             {/* <GatsbyImage image={image} alt={`This is ${slug} thumbnail image`} /> */}
@@ -52,7 +51,11 @@ export default function PostThumbNailCardUI({
             <div className={previewTags}>
               <ul>
                 {tagsList.map((tag) => {
-                  return <div>{tag}</div>;
+                  return (
+                    <p key={tag} className={hashtag}>
+                      #{tag}
+                    </p>
+                  );
                 })}
               </ul>
             </div>

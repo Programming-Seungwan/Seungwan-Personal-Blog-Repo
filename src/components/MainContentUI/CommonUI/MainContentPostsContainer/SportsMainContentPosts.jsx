@@ -17,7 +17,7 @@ export default function SportsMainContentPosts() {
             tagsJson {
               tags
             }
-            writtenTime(formatString: "YYYY-MM-DD")
+            writtenTime
             thumbnailImage {
               gatsbyImageData
             }
@@ -30,8 +30,8 @@ export default function SportsMainContentPosts() {
 
   return (
     <>
-      <ul className={sportsUl}>
-        {dataArray.map((data) => {
+      <ul className={`${sportsUl} scroll-box`}>
+        {dataArray.map((data, index) => {
           const title = data.node.title;
           const writtenTime = data.node.writtenTime;
           const thumbnailImageSrc = data.node.thumbnailImage.gatsbyImageData.images.fallback.src;

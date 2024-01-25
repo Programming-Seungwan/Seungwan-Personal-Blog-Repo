@@ -23,6 +23,7 @@
 4. mainContentHeader가 fixed 되니까 모바일 화면에서 사이드 네브 바를 열었을 떄, 헤더가 가리는 현상이 발생한다. z-index의 차이를 둬야할 것 같음(해결 완료)
 5. contentful CMS에서 richText로 작성한 내용이 raw 데이터, 즉 그냥 이상한 문자열로만 전달되는 문제 => JSON.parse()를 해줘야 함. 그런데 이것을 그냥 plain text로 렌더하면 보안적으로 문제가 생길 수 있음
    > @contentful/rich-text-react-renderer 모듈을 통해 리액트 컴포넌트로 활용하면 옵션 설정에 맞게 p, strong 태그 등으로 바꿔줄 수 있음. 옵션은 @contentful/rich-text-types 모듈에서 타입 정의를 끌어와서 하면 됨
+6. a태그로 구현한 cardUI가 카드이다 보니까 화면의 너비가 줄어들면 컨텐츠가 세로로 길어지면서 아래로 내려가 footer 등이 안 보이는 문제가 발생한다.
 
 ## 페이지들 구현 명세
 
