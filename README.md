@@ -37,3 +37,10 @@
 8. 기본적은 /, /about, /frontend, /post, /sports, /tech, /travel에 해당하는 페이지들은 각 카테고리에 해당하는 포스팅들을 보여주는 기능을 하고, 이들을 누르면 post탭으로 넘어갈 뿐이다.
 9. /about 페이지에 들어갈 컨텐츠는 파일 내의 mdx로서 관리한다
 10. mainContent 내부의 MainContentPostsContainer 컴포넌트는 mainContentType을 속성으로 받으며, 이 속성을 통해 원하는 컨텐츠 목록이 보여진다
+
+# 각 post 구현 명세
+
+- sports post : title, slug, written time, Thumbnail Image, sports post content, tags Json, event(종목을 의미)
+- frontend post : title, slug, written time, Thumbnail Image, frontend post content, tags Json(여기에서 어떤 거 관련인지 구분), reference link(not required), github link(not required)
+- travel post : title, slug, written time, Thumbnail Image, travel post content, tags Json, isAbroad(boolean), city
+- tech post : title, slug, written time, category(algorithm, OS, backend), Thumbnail Image(not required), tech post content, tag Json,

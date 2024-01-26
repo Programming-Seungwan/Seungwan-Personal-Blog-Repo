@@ -31,7 +31,7 @@ export default function SportsMainContentPosts() {
   return (
     <>
       <ul className={`${sportsUl} scroll-box`}>
-        {dataArray.map((data, index) => {
+        {dataArray.map((data) => {
           const title = data.node.title;
           const writtenTime = data.node.writtenTime;
           const thumbnailImageSrc = data.node.thumbnailImage.gatsbyImageData.images.fallback.src;
