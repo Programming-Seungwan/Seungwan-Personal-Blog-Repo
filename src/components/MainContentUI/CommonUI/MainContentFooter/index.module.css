@@ -1,2 +1,19 @@
 .MainContentFooterContainer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: rgba(85, 85, 85, 0.8);
+  padding-left: 9px;
+  padding-top: 5px;
+  height: 30px;
+}
+
+.MainContentFooterContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px; /* 원하는 두께로 조절 */
+  background-color: rgb(133, 133, 133, 0.3); /* 원하는 색상으로 조절 */
 }
