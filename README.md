@@ -25,6 +25,7 @@
    > @contentful/rich-text-react-renderer 모듈을 통해 리액트 컴포넌트로 활용하면 옵션 설정에 맞게 p, strong 태그 등으로 바꿔줄 수 있음. 옵션은 @contentful/rich-text-types 모듈에서 타입 정의를 끌어와서 하면 됨
 6. a태그로 구현한 cardUI가 카드이다 보니까 화면의 너비가 줄어들면 컨텐츠가 세로로 길어지면서 아래로 내려가 footer 등이 안 보이는 문제가 발생한다.
 7. pc 환경에서 화면을 좁히고 햄버거 버튼을 눌러서 사이드 바가 나타나게 만든 후, 다시 인위적으로 화면을 옆으로 늘릴 때 깨지는 현상이 발생한다
+8. css 배포를 한 뒤에 개발 환경에서는 적용되지만, 배포 환경에서는 나타나지 않는 문제 => netlify가 CDN을 이용한 배포 툴이기 떄문에 캐싱된 것이 갱신되지 않음 : netlify에서 clear cache and trigger new deploy를 해주면됨(해결 완료)
 
 ## 페이지들 구현 명세
 
