@@ -30,7 +30,7 @@ export default function Profile() {
       <div className={profileToggleContainer}>
         {profileToggle && <FontAwesomeIcon icon={faCaretRight} size='2x' onClick={handleClickProfileToggleButton} />}
         {!profileToggle && <FontAwesomeIcon icon={faCaretDown} size='2x' onClick={handleClickProfileToggleButton} />}
-        <span>Career</span>
+        <span>인생 프로필</span>
       </div>
 
       {!profileToggle && (

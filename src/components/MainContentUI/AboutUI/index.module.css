@@ -99,9 +99,56 @@
   height: 50px;
 }
 
+.likeContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: space-evenly;
+}
+
+.likeToggleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 15px;
+  padding: 0 10%;
+}
+
+.likeToggleContainer > span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.likesSubjectContainer {
+  padding: 0 15%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.likeSubject {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.likeSubject > span {
+  font-size: 1.2rem;
+  font-weight: 460;
+}
+
+/* 모바일 디바이스를 위한 미디어 쿼리 */
 @media screen and (max-width: 768px) {
   .logo {
     width: 30px;
     height: 30px;
+  }
+
+  .likeSubject > span {
+    font-size: 0.8rem;
   }
 }
