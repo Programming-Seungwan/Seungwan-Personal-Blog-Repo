@@ -36,12 +36,25 @@
   border-radius: 10%;
 }
 
+.profileToggleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 15px;
+  padding: 0 10%;
+}
+
+.profileToggleContainer > span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 .lifeCareer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  margin-top: 25px;
+  /* margin-top: 25px; */
 }
 
 .lifeTitle {
@@ -50,7 +63,7 @@
   justify-content: center;
   font-size: 1.95rem;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .schoolCareer {
