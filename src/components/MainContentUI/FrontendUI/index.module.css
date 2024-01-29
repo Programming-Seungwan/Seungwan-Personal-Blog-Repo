@@ -10,5 +10,6 @@
   font-weight: 350;
   color: rgba(0, 0, 0, 0.5);
   word-wrap: break-word;
+  word-break: keep-all;
   text-align: center;
 }
