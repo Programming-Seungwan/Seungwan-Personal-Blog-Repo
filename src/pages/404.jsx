@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -66,7 +66,7 @@ function handleClickGoHomtButtons() {
 }
 
 const NotFoundPage = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => navigate('/'), 10000);
 
     return () => clearTimeout(timer);

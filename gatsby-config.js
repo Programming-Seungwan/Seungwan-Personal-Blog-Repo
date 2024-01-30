@@ -8,22 +8,9 @@ module.exports = {
     siteUrl: `https://seungwan-blog.netlify.app/`,
   },
   plugins: [
+    'gatsby-plugin-provide-react',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'aboutMe',
-        path: `${__dirname}/aboutMe`,
-      },
-    },
     {
       resolve: `gatsby-source-contentful`,
       options: {

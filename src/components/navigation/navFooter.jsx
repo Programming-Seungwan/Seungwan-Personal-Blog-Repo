@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { navFooter, gatsbyLogo, graphQLLogo, contentfulLogo } from './navbar.module.css';
 
 export default function NavFooter() {

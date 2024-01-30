@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { likeContainer, likeToggleContainer, likesSubjectContainer, likeSubject } from './index.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fa1, fa2, fa3, faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function Like() {
-  const [likeToggleButton, setLikeToggleButon] = React.useState(true);
+  const [likeToggleButton, setLikeToggleButon] = useState(true);
 
   function handleClickLikeToggleButton() {
     setLikeToggleButon((before) => !before);

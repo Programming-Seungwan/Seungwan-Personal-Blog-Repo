@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { navBar, hamburgerButtonClickedNavBar } from './navbar.module.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import NavHeader from './navHeader';

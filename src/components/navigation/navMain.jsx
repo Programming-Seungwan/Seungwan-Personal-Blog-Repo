@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { navMain } from './navbar.module.css';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

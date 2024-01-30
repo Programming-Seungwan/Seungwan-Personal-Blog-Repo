@@ -1,4 +1,3 @@
-import * as React from 'react';
 import MainContentFixedHeader from '../CommonUI/MainContentFixedHeader/MainContentFixedHeader';
 import MainContentCategoryExplain from '../CommonUI/MainContentCategoryExplain/MainContentCategoryExplain';
 import MainContentFooter from '../CommonUI/MainContentFooter/MainContentFooter';

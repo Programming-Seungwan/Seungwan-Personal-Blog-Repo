@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { MainContentFooterContainer } from './index.module.css';
 
 export default function MainContentFooter() {

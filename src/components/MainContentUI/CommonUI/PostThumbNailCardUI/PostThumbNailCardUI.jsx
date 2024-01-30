@@ -1,4 +1,3 @@
-import * as React from 'react';
 import moment from 'moment';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';

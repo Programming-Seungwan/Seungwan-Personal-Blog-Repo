@@ -18,13 +18,21 @@
 
 1. Fontawesome에서 불러온 이미지들이 초반에 너무 크게 로드되고 그 다음에 사이즈가 맞추어지는 경향이 있음. 이를 어떻게 해결할지? =>
    Fontawesome 컴포넌트를 사용하는 최상위 파일(navbar.jsx)에 `import '@fortawesome/fontawesome-svg-core/styles.css';`를 붙여줌
+
 2. 검색엔진 최적화는 매번 Head 컴포넌트를 export 해주는 방식과 react - helmet 모듈을 쓰는 것 중에서 고민해볼 필요가 있다.
-3. 모바일에서 보았을 때, 디폴트로 navbar는 보이지 않고 햄버거 버튼만 보이게 만든다. 그리고 이를 눌렀을 떄 nav bar가 나타나는 방식으로 진행. 눌렀을 때 상태값을 줘서 클래스를 생성. 기존에 모바일에서 봤을 때 처음에는 전체에 햄버거 버튼만 보여야 됨 => 반응형 디자인으로 해결함
+
+3. 모바일에서 보았을 때, 디폴트로 navbar는 보이지 않고 햄버거 버튼만 보이게 만든다. 그리고 이를 눌렀을 떄 nav bar가 나타나는 방식으로 진행. 눌렀을 때 상태값을 줘서 클래스를 생성. 기존에 모바일에서 봤을 때 처음에는 전체에 햄버거 버튼만 보여야 됨 => 반응형 디자인으로 해결함(해결 완료)
+
 4. mainContentHeader가 fixed 되니까 모바일 화면에서 사이드 네브 바를 열었을 떄, 헤더가 가리는 현상이 발생한다. z-index의 차이를 둬야할 것 같음(해결 완료)
+
 5. contentful CMS에서 richText로 작성한 내용이 raw 데이터, 즉 그냥 이상한 문자열로만 전달되는 문제 => JSON.parse()를 해줘야 함. 그런데 이것을 그냥 plain text로 렌더하면 보안적으로 문제가 생길 수 있음
-   > @contentful/rich-text-react-renderer 모듈을 통해 리액트 컴포넌트로 활용하면 옵션 설정에 맞게 p, strong 태그 등으로 바꿔줄 수 있음. 옵션은 @contentful/rich-text-types 모듈에서 타입 정의를 끌어와서 하면 됨
-6. a태그로 구현한 cardUI가 카드이다 보니까 화면의 너비가 줄어들면 컨텐츠가 세로로 길어지면서 아래로 내려가 footer 등이 안 보이는 문제가 발생한다.
-7. pc 환경에서 화면을 좁히고 햄버거 버튼을 눌러서 사이드 바가 나타나게 만든 후, 다시 인위적으로 화면을 옆으로 늘릴 때 깨지는 현상이 발생한다
+
+   > @contentful/rich-text-react-renderer 모듈을 통해 리액트 컴포넌트로 활용하면 옵션 설정에 맞게 p, strong 태그 등으로 바꿔줄 수 있음. 옵션은 @contentful/rich-text-types 모듈에서 타입 정의를 끌어와서 하면 됨(해결 완료)
+
+6. a태그로 구현한 cardUI가 카드이다 보니까 화면의 너비가 줄어들면 컨텐츠가 세로로 길어지면서 아래로 내려가 footer 등이 안 보이는 문제가 발생한다 => mainContent 컨테이너의 display : flex로, flex-direction을 column으로 만들고 flex-shrink를 0으로 두면서 자연스럽게 문서의 일반 흐름에 footer도 포함시키고 스크롤도 되게 만들어 주었음(해결 완료)
+
+7. pc 환경에서 화면을 좁히고 햄버거 버튼을 눌러서 사이드 바가 나타나게 만든 후, 다시 인위적으로 화면을 옆으로 늘릴 때 깨지는 현상이 발생한다 => layout.jsx 컴포넌트에서 전체 화면의 너비가 769픽셀 이상이 되면 hamburgerButtonClicked 관련 recoil state가 false가 되면서 navbar가 무조건 나타나게 만들었음, 이런 점에서 navbar관련 스타일링에서 그냥 navbar 클래스와 hamburgerButtonClickedNavBar 클래스를 따로 만들어서 구현해준 것이 참 좋았음. 또한 hamburgerButtonClickNavBar 클래스는 z-index가 15로 높아서 리코일 상태 값이 true가 되어 생성되면 기존의 main content의 너비가 100프로라고 하더라도 그냥 가려버린다.(해결 완료)
+
 8. css 배포를 한 뒤에 개발 환경에서는 적용되지만, 배포 환경에서는 나타나지 않는 문제 => netlify가 CDN을 이용한 배포 툴이기 떄문에 캐싱된 것이 갱신되지 않음 : netlify에서 clear cache and trigger new deploy를 해주면됨(해결 완료)
 
 ## 페이지들 구현 명세

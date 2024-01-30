@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { mainContent } from './mainContent.module.css';
 import AboutMainContent from '../MainContentUI/AboutUI/AboutMainContent';
 import FrontendMainContent from '../MainContentUI/FrontendUI/FrontendMainContent';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import {
   profileContainer,
@@ -14,7 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function Profile() {
-  const [profileToggle, setProfileToggle] = React.useState(true);
+  const [profileToggle, setProfileToggle] = useState(true);
 
   function handleClickProfileToggleButton() {
     setProfileToggle((before) => !before);
