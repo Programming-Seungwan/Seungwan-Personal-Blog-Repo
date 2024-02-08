@@ -34,6 +34,7 @@
 7. pc 환경에서 화면을 좁히고 햄버거 버튼을 눌러서 사이드 바가 나타나게 만든 후, 다시 인위적으로 화면을 옆으로 늘릴 때 깨지는 현상이 발생한다 => layout.jsx 컴포넌트에서 전체 화면의 너비가 769픽셀 이상이 되면 hamburgerButtonClicked 관련 recoil state가 false가 되면서 navbar가 무조건 나타나게 만들었음, 이런 점에서 navbar관련 스타일링에서 그냥 navbar 클래스와 hamburgerButtonClickedNavBar 클래스를 따로 만들어서 구현해준 것이 참 좋았음. 또한 hamburgerButtonClickNavBar 클래스는 z-index가 15로 높아서 리코일 상태 값이 true가 되어 생성되면 기존의 main content의 너비가 100프로라고 하더라도 그냥 가려버린다.(해결 완료)
 
 8. css 배포를 한 뒤에 개발 환경에서는 적용되지만, 배포 환경에서는 나타나지 않는 문제 => netlify가 CDN을 이용한 배포 툴이기 떄문에 캐싱된 것이 갱신되지 않음 : netlify에서 clear cache and trigger new deploy를 해주면됨(해결 완료)
+9. /sports 관련 url 에서 포스팅 카드 UI를 보여줄 때 일부 이미지들이 너무 커보이는 문제가 발생함
 
 ## 페이지들 구현 명세
 
