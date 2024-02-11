@@ -1,40 +1,42 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { sportsUl } from './index.module.css';
-import PostThumbNailCardUI from '../PostThumbNailCardUI/PostThumbNailCardUI';
+import { travelUl } from './index.module.css';
+import PostThumbNailCardUI from '../../PostThumbNailCardUI/PostThumbNailCardUI';
 
-export default function SportsMainContentPosts() {
-  const dataArray = useStaticQuery(graphql`
-    query MyQuery {
-      allContentfulSeungwanBlogSportsPost {
+export default function TravelMainContentPosts() {
+  const travelDataArray = useStaticQuery(graphql`
+    query MyTravelQuery {
+      allContentfulSeungwanBlogTravelPost {
         edges {
           node {
             slug
             updatedAt(formatString: "YYYY-MM-DD")
-            sportsPostContent {
+            writtenTime
+            isAbroad
+            city
+            travelPostContent {
               raw
             }
             tagsJson {
               tags
             }
-            writtenTime
+            title
             thumbnailImage {
               gatsbyImageData
             }
-            title
           }
         }
       }
     }
-  `).allContentfulSeungwanBlogSportsPost.edges;
-
+  `).allContentfulSeungwanBlogTravelPost.edges;
+  console.log(travelDataArray);
   return (
     <>
-      <ul className={`${sportsUl} scroll-box`}>
-        {dataArray.map((data) => {
+      <ul className={`${travelUl} scroll-box`}>
+        {travelDataArray.map((data) => {
           const title = data.node.title;
           const writtenTime = data.node.writtenTime;
           const thumbnailImageSrc = data.node.thumbnailImage.gatsbyImageData.images.fallback.src;
-          const thumbnailContent = data.node.sportsPostContent.raw;
+          const thumbnailContent = data.node.travelPostContent.raw;
           const slug = data.node.slug;
           const tagsList = data.node.tagsJson.tags;
           return (

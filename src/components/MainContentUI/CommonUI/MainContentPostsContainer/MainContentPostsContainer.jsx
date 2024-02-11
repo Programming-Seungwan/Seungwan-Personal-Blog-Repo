@@ -1,9 +1,8 @@
 import { mainContentPostsContainer } from './index.module.css';
-import SportsMainContentPosts from './SportsMainContentPosts';
-import HomeMaincContentPosts from './HomeMainContentPosts';
-import TechMainContentPosts from './TechMainContentPosts';
-import TravelMainContentPosts from './TravelMainContentPosts';
-import FrontendMainContentPosts from './FrontendMainContentPosts';
+import SportsMainContentPosts from './sportsMainContentPosts/SportsMainContentPosts';
+import TechMainContentPosts from './techMainContentPosts/TechMainContentPosts';
+import TravelMainContentPosts from './travelMainContentPosts/TravelMainContentPosts';
+import FrontendMainContentPosts from './frontendMainContentPosts/FrontendMainContentPosts';
 
 export default function MainContentPostsContainer({ mainContentType, children }) {
   return (
