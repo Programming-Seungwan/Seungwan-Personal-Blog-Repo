@@ -3,6 +3,7 @@ import SportsMainContentPosts from './sportsMainContentPosts/SportsMainContentPo
 import TechMainContentPosts from './techMainContentPosts/TechMainContentPosts';
 import TravelMainContentPosts from './travelMainContentPosts/TravelMainContentPosts';
 import FrontendMainContentPosts from './frontendMainContentPosts/FrontendMainContentPosts';
+import HomeMainContentPosts from './homeMainContentPosts/HomeMainContentPosts';
 
 export default function MainContentPostsContainer({ mainContentType, children }) {
   return (
@@ -11,6 +12,7 @@ export default function MainContentPostsContainer({ mainContentType, children })
       {mainContentType === 'travel' && <TravelMainContentPosts />}
       {mainContentType === 'frontend' && <FrontendMainContentPosts />}
       {mainContentType === 'tech' && <TechMainContentPosts />}
+      {mainContentType === 'home' && <HomeMainContentPosts />}
     </div>
   );
 }

@@ -1,3 +1,3 @@
 export default function HomeMainContentPosts() {
-  return;
+  return <div>This is home main content posts</div>;
 }

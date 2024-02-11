@@ -1,6 +1,9 @@
-import Layout from '../../components/Layout/layout';
-import MainContent from '../../components/main-content/main-content';
+import { useEffect } from 'react';
+import { navigate } from 'gatsby';
 
-export default function PostPage() {
-  return <div>hi</div>;
+export default function PostIndexPage() {
+  useEffect(() => {
+    navigate('/');
+  }, []);
+  return null;
 }
