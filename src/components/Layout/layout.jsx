@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { container } from './layout.module.css';
 import Navbar from '../navigation/navbar.jsx';
 import { useRecoilState } from 'recoil';

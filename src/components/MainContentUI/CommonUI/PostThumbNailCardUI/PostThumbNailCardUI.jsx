@@ -36,31 +36,29 @@ export default function PostThumbNailCardUI({
   const postContent = JSON.parse(thumbnailContent);
 
   return (
-    <a href={`/post/${slug}`} className={postThumbNailCardAnchor}>
-      <div className={postThumbNailCardContainer}>
-        <div className={postThumbNailCardTitle}>{title}</div>
-        <div className={postThumbNailCardWrittenDate}>{moment(writtenTime).format('MMM Do YY')}</div>
-        <div className={postThumbNailCardPreviewThumbnail}>
-          <div className={previewImage}>
-            {/* <GatsbyImage image={image} alt={`This is ${slug} thumbnail image`} /> */}
-            <img src={thumbnailImageSrc} alt='this is thumbnailImage' />
-          </div>
-          <div className={previewSummaryAndTagsContainer}>
-            <div className={previewSummary}>{documentToReactComponents(postContent, options)}</div>
-            <div className={previewTags}>
-              <ul>
-                {tagsList.map((tag) => {
-                  return (
-                    <p key={tag} className={hashtag}>
-                      #{tag}
-                    </p>
-                  );
-                })}
-              </ul>
-            </div>
+    <div className={postThumbNailCardContainer}>
+      <div className={postThumbNailCardTitle}>{title}</div>
+      <div className={postThumbNailCardWrittenDate}>{moment(writtenTime).format('MMM Do YY')}</div>
+      <div className={postThumbNailCardPreviewThumbnail}>
+        <div className={previewImage}>
+          {/* <GatsbyImage image={image} alt={`This is ${slug} thumbnail image`} /> */}
+          <img src={thumbnailImageSrc} alt='this is thumbnailImage' />
+        </div>
+        <div className={previewSummaryAndTagsContainer}>
+          <div className={previewSummary}>{documentToReactComponents(postContent, options)}</div>
+          <div className={previewTags}>
+            <ul>
+              {tagsList.map((tag) => {
+                return (
+                  <p key={tag} className={hashtag}>
+                    #{tag}
+                  </p>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>
-    </a>
+    </div>
   );
 }

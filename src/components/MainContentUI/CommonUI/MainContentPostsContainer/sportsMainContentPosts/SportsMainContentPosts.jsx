@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { sportsUl } from './index.module.css';
+import { sportsUl, postThumbNailCardAnchor } from './index.module.css';
 import PostThumbNailCardUI from '../../PostThumbNailCardUI/PostThumbNailCardUI';
+import { Link } from 'gatsby';
 
 export default function SportsMainContentPosts() {
   const dataArray = useStaticQuery(graphql`
@@ -38,15 +39,17 @@ export default function SportsMainContentPosts() {
           const slug = data.node.slug;
           const tagsList = data.node.tagsJson.tags;
           return (
-            <PostThumbNailCardUI
-              title={title}
-              writtenTime={writtenTime}
-              thumbnailImageSrc={thumbnailImageSrc}
-              thumbnailContent={thumbnailContent}
-              slug={slug}
-              tagsList={tagsList}
-              key={slug}
-            ></PostThumbNailCardUI>
+            <Link to={`/post/sports/${slug}`} className={postThumbNailCardAnchor}>
+              <PostThumbNailCardUI
+                title={title}
+                writtenTime={writtenTime}
+                thumbnailImageSrc={thumbnailImageSrc}
+                thumbnailContent={thumbnailContent}
+                slug={slug}
+                tagsList={tagsList}
+                key={slug}
+              ></PostThumbNailCardUI>
+            </Link>
           );
         })}
       </ul>

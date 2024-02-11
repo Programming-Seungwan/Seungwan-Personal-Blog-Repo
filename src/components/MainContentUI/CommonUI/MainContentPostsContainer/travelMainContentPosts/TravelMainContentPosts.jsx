@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { travelUl } from './index.module.css';
+import { travelUl, postThumbNailCardAnchor } from './index.module.css';
 import PostThumbNailCardUI from '../../PostThumbNailCardUI/PostThumbNailCardUI';
+import { Link } from 'gatsby';
 
 export default function TravelMainContentPosts() {
   const travelDataArray = useStaticQuery(graphql`
@@ -28,7 +29,7 @@ export default function TravelMainContentPosts() {
       }
     }
   `).allContentfulSeungwanBlogTravelPost.edges;
-  console.log(travelDataArray);
+
   return (
     <>
       <ul className={`${travelUl} scroll-box`}>
@@ -40,15 +41,17 @@ export default function TravelMainContentPosts() {
           const slug = data.node.slug;
           const tagsList = data.node.tagsJson.tags;
           return (
-            <PostThumbNailCardUI
-              title={title}
-              writtenTime={writtenTime}
-              thumbnailImageSrc={thumbnailImageSrc}
-              thumbnailContent={thumbnailContent}
-              slug={slug}
-              tagsList={tagsList}
-              key={slug}
-            ></PostThumbNailCardUI>
+            <Link to={`post/travel/${slug}`} className={postThumbNailCardAnchor}>
+              <PostThumbNailCardUI
+                title={title}
+                writtenTime={writtenTime}
+                thumbnailImageSrc={thumbnailImageSrc}
+                thumbnailContent={thumbnailContent}
+                slug={slug}
+                tagsList={tagsList}
+                key={slug}
+              ></PostThumbNailCardUI>
+            </Link>
           );
         })}
       </ul>
