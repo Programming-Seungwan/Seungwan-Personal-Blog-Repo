@@ -39,7 +39,7 @@ export default function SportsMainContentPosts() {
           const slug = data.node.slug;
           const tagsList = data.node.tagsJson.tags;
           return (
-            <Link to={`/post/sports/${slug}`} className={postThumbNailCardAnchor}>
+            <Link to={`/post/sports/${slug}`} className={postThumbNailCardAnchor} key={slug}>
               <PostThumbNailCardUI
                 title={title}
                 writtenTime={writtenTime}
@@ -47,7 +47,6 @@ export default function SportsMainContentPosts() {
                 thumbnailContent={thumbnailContent}
                 slug={slug}
                 tagsList={tagsList}
-                key={slug}
               ></PostThumbNailCardUI>
             </Link>
           );

@@ -41,7 +41,7 @@ export default function TravelMainContentPosts() {
           const slug = data.node.slug;
           const tagsList = data.node.tagsJson.tags;
           return (
-            <Link to={`post/travel/${slug}`} className={postThumbNailCardAnchor}>
+            <Link to={`/post/travel/${slug}`} className={postThumbNailCardAnchor} key={slug}>
               <PostThumbNailCardUI
                 title={title}
                 writtenTime={writtenTime}
@@ -49,7 +49,6 @@ export default function TravelMainContentPosts() {
                 thumbnailContent={thumbnailContent}
                 slug={slug}
                 tagsList={tagsList}
-                key={slug}
               ></PostThumbNailCardUI>
             </Link>
           );

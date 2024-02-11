@@ -35,6 +35,7 @@
 
 8. css 배포를 한 뒤에 개발 환경에서는 적용되지만, 배포 환경에서는 나타나지 않는 문제 => netlify가 CDN을 이용한 배포 툴이기 떄문에 캐싱된 것이 갱신되지 않음 : netlify에서 clear cache and trigger new deploy를 해주면됨(해결 완료)
 9. /sports 관련 url 에서 포스팅 카드 UI를 보여줄 때 일부 이미지들이 너무 커보이는 문제가 발생함
+   1 각 데이터들은 현재 pageContext로 옮겨놨으니 toString() 등의 프로세싱을 통해서 UI로 전환한다
 
 ## 페이지들 구현 명세
 
@@ -48,10 +49,12 @@
 8. 기본적은 /, /about, /frontend, /post, /sports, /tech, /travel에 해당하는 페이지들은 각 카테고리에 해당하는 포스팅들을 보여주는 기능을 하고, 이들을 누르면 post탭으로 넘어갈 뿐이다.
 9. /about 페이지에 들어갈 컨텐츠는 파일 내의 mdx로서 관리한다
 10. mainContent 내부의 MainContentPostsContainer 컴포넌트는 mainContentType을 속성으로 받으며, 이 속성을 통해 원하는 컨텐츠 목록이 보여진다.
-11. 각 카테고리 탭에서 postCardUI를 누르면 /post/{카테고리명}/{고유의 slug명}으로 된 url path로 이동한다. 이는 pages 디렉터리 내에서 카테고리 별로 UI의 디자인이 달라질 수 있기에 이렇게 작성한다
+11. 각 카테고리 탭에서 postCardUI를 누르면 /post/{카테고리명}/{고유의 slug명}으로 된 url path로 이동한다. 이는 디렉터리 내에서 카테고리 별로 UI의 디자인이 달라질 수 있기에 이렇게 작성한다
+12. 각 페이지의 데이터는 pageContext로 전달된다 이는 아직 dom에 녹아들어갈 수 없으므로 잘 프로세싱 해서 사용하낟.
 
 # 각 post 구현 명세
 
+- 실제 각 post들의 template은 /src/postTemplates 디렉터리 내부에서 정의된다
 - sports post : title, slug, written time, Thumbnail Image, sports post content, tags Json, event(종목을 의미)
 - frontend post : title, slug, written time, Thumbnail Image, frontend post content, tags Json(여기에서 어떤 거 관련인지 구분), reference link(not required), github link(not required)
 - travel post : title, slug, written time, Thumbnail Image, travel post content, tags Json, isAbroad(boolean), city
