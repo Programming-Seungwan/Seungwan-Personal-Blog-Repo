@@ -50,7 +50,8 @@
 9. /about 페이지에 들어갈 컨텐츠는 파일 내의 mdx로서 관리한다
 10. mainContent 내부의 MainContentPostsContainer 컴포넌트는 mainContentType을 속성으로 받으며, 이 속성을 통해 원하는 컨텐츠 목록이 보여진다.
 11. 각 카테고리 탭에서 postCardUI를 누르면 /post/{카테고리명}/{고유의 slug명}으로 된 url path로 이동한다. 이는 디렉터리 내에서 카테고리 별로 UI의 디자인이 달라질 수 있기에 이렇게 작성한다
-12. 각 페이지의 데이터는 pageContext로 전달된다 이는 아직 dom에 녹아들어갈 수 없으므로 잘 프로세싱 해서 사용하낟.
+12. 각 페이지의 데이터는 pageContext로 전달된다 이는 아직 dom에 녹아들어갈 수 없으므로 잘 프로세싱 해서 사용한다 => prop으로 넘긴 것을 이용하여 만들지, 아니면 그냥 다시 graphQL 요청을 실행할지 정해야 함
+13. post/{카테고리명}/{slug명} 의 url에서 기존의 UI를 유지할 수 있어야 함
 
 # 각 post 구현 명세
 

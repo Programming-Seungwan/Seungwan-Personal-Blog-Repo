@@ -1,3 +1,11 @@
+import Layout from '../../components/Layout/layout';
+import MainContent from '../../components/main-content/main-content';
+
 export default function TravelPostTemplate({ pageContext }) {
-  return <div>this is tmp travel post</div>;
+  console.log(pageContext);
+  return (
+    <Layout>
+      <MainContent pageCategory='travelPost' />
+    </Layout>
+  );
 }
