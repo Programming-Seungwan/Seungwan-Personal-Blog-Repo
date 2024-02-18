@@ -50,11 +50,13 @@
 9. /about 페이지에 들어갈 컨텐츠는 파일 내의 mdx로서 관리한다
 10. mainContent 내부의 MainContentPostsContainer 컴포넌트는 mainContentType을 속성으로 받으며, 이 속성을 통해 원하는 컨텐츠 목록이 보여진다.
 11. 각 카테고리 탭에서 postCardUI를 누르면 /post/{카테고리명}/{고유의 slug명}으로 된 url path로 이동한다. 이는 디렉터리 내에서 카테고리 별로 UI의 디자인이 달라질 수 있기에 이렇게 작성한다
-12. 각 페이지의 데이터는 pageContext로 전달된다 이는 아직 dom에 녹아들어갈 수 없으므로 잘 프로세싱 해서 사용한다 => prop으로 넘긴 것을 이용하여 만들지, 아니면 그냥 다시 graphQL 요청을 실행할지 정해야 함
-13. post/{카테고리명}/{slug명} 의 url에서 기존의 UI를 유지할 수 있어야 함
+12. 각 페이지의 데이터는 pageContext로 전달된다 이는 아직 dom에 녹아들어갈 수 없으므로 잘 프로세싱 해서 사용한다 => prop으로 넘긴 것을 이용하여 만들지, 아니면 그냥 다시 graphQL 요청을 실행할지 정해야 함 : 페이지 이동을 하면 전달해준 정보를 만들어줌
+13. post/{카테고리명}/{slug명} 의 url에서 기존의 UI를 유지할 수 있어야 함 => layout 구조를 활용하여 해결했음
+14. / 경로에서는 내가 쓴 모든 포스팅을 날짜 순서대로 역으로 정렬하여 보여줄 수 있어야 한다. 이를 위해서 allContentEntry 관련한 쿼리를 진행하여 데이터를 가져와야 하는데, 이를 어떻게 날짜 별로 정렬할지? => graphQL 자체적으로는 내부 필드를 이용하여 정렬하는 기능을 제공하지 않음. 따라서 각 카테고리별 post를 graphQL로 여러 개를 받아와 구조 분해 방식으로 합쳐준 다음, 이들을 날짜에 따라서 정렬하는 태도가 필요함
 
 # 각 post 구현 명세
 
+- 각 post는 category 속성을 가진다. 이는 travel, sports, tech, frontend로 나뉘며 추후에 postCardUI를 클릭했을 때 /post 다음의 카테고리명으로 쓰인다.
 - 실제 각 post들의 template은 /src/postTemplates 디렉터리 내부에서 정의된다
 - sports post : title, slug, written time, Thumbnail Image, sports post content, tags Json, event(종목을 의미)
 - frontend post : title, slug, written time, Thumbnail Image, frontend post content, tags Json(여기에서 어떤 거 관련인지 구분), reference link(not required), github link(not required)
