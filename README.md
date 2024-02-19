@@ -9,7 +9,7 @@
 ## 플러그인들의 기능
 
 1. gatsby-transformer-remark: 마크다운으로 작성한 문법들을 다시 parsing 하여 gatsbyJS에 녹여내기 위한 플러그인
-2. gatsby-plugin-mdx : mdx로 작서한 것은 특이하게 remark가 아니라 이 라이브러리를 이용해야 함
+2. gatsby-plugin-mdx : mdx로 작성한 것은 특이하게 remark가 아니라 이 라이브러리를 이용해야 함
 3. gatsby-plugin-sharp, gatsby-transformer-sharp : gatsby에서 이미지 최적화를 위해 필요한 라이브러리
 4. gatsby-plugin-image: 위의 두 모듈을 gatsby-config.js에서 설정해주면, 해당 이미지를 컴포넌트로 쓰기 위해 활용되는 플러그인
 5. gatsby-source-contentful : Headless CMS인 contentful에서 컨텐츠를 관리하고 이를 gatsby에 graphQL로 끌어오기 위한 모듈. gatsby-config.js 파일에 spaceID와 accessToken을 활용하면 된다
@@ -35,7 +35,8 @@
 
 8. css 배포를 한 뒤에 개발 환경에서는 적용되지만, 배포 환경에서는 나타나지 않는 문제 => netlify가 CDN을 이용한 배포 툴이기 떄문에 캐싱된 것이 갱신되지 않음 : netlify에서 clear cache and trigger new deploy를 해주면됨(해결 완료)
 9. /sports 관련 url 에서 포스팅 카드 UI를 보여줄 때 일부 이미지들이 너무 커보이는 문제가 발생함
-   1 각 데이터들은 현재 pageContext로 옮겨놨으니 toString() 등의 프로세싱을 통해서 UI로 전환한다
+10. pre-render를 해준 각 페이지의 컴포넌트에서 pageContext 속성을 통해서 넘겨주기는 했으나, 일단은 컴포넌트 차원에서 url param를 따와서 이를 기반으로 slug 관련 graphQL 쿼리를 해줘서 UI를 만들어주는 것이 좋지 않을까 싶음.
+11. 카테고리 별로 sports, frontend, tech, travel에 따라서 컨텐츠가 조금씩 다르므로 각각의 UI를 만들어주는 것이 필요하다. 즉 post 컴포넌트 디렉터리를 새로 파고, 거기에 원하는 UI를 만드는 컴포넌트를 생성하여 필요할 때마다 데이터를 prop으로 넘기는 방식으로 UI를 세로로 구성하는 것이 좋아보인다.
 
 ## 페이지들 구현 명세
 
@@ -53,6 +54,7 @@
 12. 각 페이지의 데이터는 pageContext로 전달된다 이는 아직 dom에 녹아들어갈 수 없으므로 잘 프로세싱 해서 사용한다 => prop으로 넘긴 것을 이용하여 만들지, 아니면 그냥 다시 graphQL 요청을 실행할지 정해야 함 : 페이지 이동을 하면 전달해준 정보를 만들어줌
 13. post/{카테고리명}/{slug명} 의 url에서 기존의 UI를 유지할 수 있어야 함 => layout 구조를 활용하여 해결했음
 14. / 경로에서는 내가 쓴 모든 포스팅을 날짜 순서대로 역으로 정렬하여 보여줄 수 있어야 한다. 이를 위해서 allContentEntry 관련한 쿼리를 진행하여 데이터를 가져와야 하는데, 이를 어떻게 날짜 별로 정렬할지? => graphQL 자체적으로는 내부 필드를 이용하여 정렬하는 기능을 제공하지 않음. 따라서 각 카테고리별 post를 graphQL로 여러 개를 받아와 구조 분해 방식으로 합쳐준 다음, 이들을 날짜에 따라서 정렬하는 태도가 필요함
+15. post 에서 코드 블럭이 있는 경우에는 pre 태그와 code 태그를 중첩하여 내가 원하는 구조에서 code를 있는 그대로 렌더링하도록 한다. 여기에서 커스텀 스타일링은 pre와 code 태그를 이용하면 된다
 
 # 각 post 구현 명세
 
@@ -62,3 +64,4 @@
 - frontend post : title, slug, written time, Thumbnail Image, frontend post content, tags Json(여기에서 어떤 거 관련인지 구분), reference link(not required), github link(not required)
 - travel post : title, slug, written time, Thumbnail Image, travel post content, tags Json, isAbroad(boolean), city
 - tech post : title, slug, written time, category(algorithm, OS, backend), Thumbnail Image(not required), tech post content, tag Json,
+- 공통적으로 post가 가지는 속성들 : title, slug, written time, updatedAt, Thumbnail Image, categoryContent-raw, tagsJson

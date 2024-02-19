@@ -31,6 +31,7 @@ export default function PostThumbNailCardUI({
       [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
       // Add other node renderers as needed
     },
+    // 이외에도 renderText도 있다
   };
 
   const postContent = JSON.parse(thumbnailContent);
