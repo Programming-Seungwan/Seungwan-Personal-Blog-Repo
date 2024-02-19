@@ -88,7 +88,7 @@ export default function HomeMainContentPosts() {
   const sortedAllPosts = allPosts.sort((a, b) => {
     return new Date(b.updatedAt) - new Date(a.updatedAt);
   });
-  console.log(sortedAllPosts);
+
   return (
     <>
       <ul className={`${homeUl} scroll-box`}>
@@ -109,7 +109,6 @@ export default function HomeMainContentPosts() {
             } else if (postCategory === 'tech') {
               thumbnailContent = post.techPostContent.raw;
             } else if (postCategory === 'frontend') {
-              console.log('hi');
               thumbnailContent = post.frontendPostContent.raw;
             }
           } catch (err) {
