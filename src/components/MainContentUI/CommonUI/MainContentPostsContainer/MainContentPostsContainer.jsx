@@ -4,6 +4,10 @@ import TechMainContentPosts from './techMainContentPosts/TechMainContentPosts';
 import TravelMainContentPosts from './travelMainContentPosts/TravelMainContentPosts';
 import FrontendMainContentPosts from './frontendMainContentPosts/FrontendMainContentPosts';
 import HomeMainContentPosts from './homeMainContentPosts/HomeMainContentPosts';
+import DetailTravelMainContentPost from './detailTravelMainContentPost/DetailTravelMainContentPost';
+import DetailTechMainContentPost from './detailTechMainContentPost/DetailTechMainContentPost';
+import DetailSportsMainContentPost from './detailSportsMainContentPost/DetailSportsMainContentPost';
+import DetailFrontendMainContentPost from './detailFrontendMainContentPost/DetailFrontendMainContentPost';
 
 export default function MainContentPostsContainer({ mainContentType, children }) {
   return (
@@ -13,6 +17,10 @@ export default function MainContentPostsContainer({ mainContentType, children })
       {mainContentType === 'frontend' && <FrontendMainContentPosts />}
       {mainContentType === 'tech' && <TechMainContentPosts />}
       {mainContentType === 'home' && <HomeMainContentPosts />}
+      {mainContentType === 'sportsPost' && <DetailSportsMainContentPost />}
+      {mainContentType === 'frontendPost' && <DetailFrontendMainContentPost />}
+      {mainContentType === 'techPost' && <DetailTechMainContentPost />}
+      {mainContentType === 'travelPost' && <DetailTravelMainContentPost />}
     </div>
   );
 }
