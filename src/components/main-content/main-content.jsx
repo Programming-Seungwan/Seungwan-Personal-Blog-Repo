@@ -10,7 +10,7 @@ import SportsPostMainContent from '../MainContentUI/PostUI/SportsPostUI/SportsPo
 import TechPostMainContent from '../MainContentUI/PostUI/TechPostUI/TechPostMainContent';
 import TravelPostMainContent from '../MainContentUI/PostUI/TravelPostUI/TravelPostMainContent';
 
-export default function MainContent({ pageCategory }) {
+export default function MainContent({ pageCategory, postData }) {
   return (
     <>
       <div className={`${mainContent} scroll-box`}>
@@ -20,10 +20,10 @@ export default function MainContent({ pageCategory }) {
         {pageCategory === 'sports' && <SportsMainContent />}
         {pageCategory === 'tech' && <TechMainContent />}
         {pageCategory === 'travel' && <TravelMainContent />}
-        {pageCategory === 'frontendPost' && <FrontendPostMainContent />}
-        {pageCategory === 'sportsPost' && <SportsPostMainContent />}
-        {pageCategory === 'techPost' && <TechPostMainContent />}
-        {pageCategory === 'travelPost' && <TravelPostMainContent />}
+        {pageCategory === 'frontendPost' && <FrontendPostMainContent postData={postData} />}
+        {pageCategory === 'sportsPost' && <SportsPostMainContent postData={postData} />}
+        {pageCategory === 'techPost' && <TechPostMainContent postData={postData} />}
+        {pageCategory === 'travelPost' && <TravelPostMainContent postData={postData} />}
       </div>
     </>
   );

@@ -4,7 +4,7 @@ import MainContentFooter from '../../CommonUI/MainContentFooter/MainContentFoote
 import MainContentPostsContainer from '../../CommonUI/MainContentPostsContainer/MainContentPostsContainer';
 import { frontendPostDiv, frontendPostDescript } from './index.module.css';
 
-export default function FrontendPostMainContent() {
+export default function FrontendPostMainContent({ postData }) {
   return (
     <>
       <MainContentFixedHeader category='FE 성장과 경험' />
@@ -14,7 +14,7 @@ export default function FrontendPostMainContent() {
           단순히 눈에 보이는 것만이 아닌, 사용자의 모든 경험과 행복을 위한 공부
         </div>
       </MainContentCategoryExplain>
-      <MainContentPostsContainer mainContentType='frontendPost' />
+      <MainContentPostsContainer mainContentType='frontendPost' postData={postData} />
       <MainContentFooter />
     </>
   );

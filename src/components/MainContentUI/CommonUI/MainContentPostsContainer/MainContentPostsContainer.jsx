@@ -9,7 +9,7 @@ import DetailTechMainContentPost from './detailTechMainContentPost/DetailTechMai
 import DetailSportsMainContentPost from './detailSportsMainContentPost/DetailSportsMainContentPost';
 import DetailFrontendMainContentPost from './detailFrontendMainContentPost/DetailFrontendMainContentPost';
 
-export default function MainContentPostsContainer({ mainContentType, children }) {
+export default function MainContentPostsContainer({ mainContentType, postData }) {
   return (
     <div className={mainContentPostsContainer}>
       {mainContentType === 'sports' && <SportsMainContentPosts />}
@@ -17,10 +17,10 @@ export default function MainContentPostsContainer({ mainContentType, children })
       {mainContentType === 'frontend' && <FrontendMainContentPosts />}
       {mainContentType === 'tech' && <TechMainContentPosts />}
       {mainContentType === 'home' && <HomeMainContentPosts />}
-      {mainContentType === 'sportsPost' && <DetailSportsMainContentPost />}
-      {mainContentType === 'frontendPost' && <DetailFrontendMainContentPost />}
-      {mainContentType === 'techPost' && <DetailTechMainContentPost />}
-      {mainContentType === 'travelPost' && <DetailTravelMainContentPost />}
+      {mainContentType === 'sportsPost' && <DetailSportsMainContentPost postData={postData} />}
+      {mainContentType === 'frontendPost' && <DetailFrontendMainContentPost postData={postData} />}
+      {mainContentType === 'techPost' && <DetailTechMainContentPost postData={postData} />}
+      {mainContentType === 'travelPost' && <DetailTravelMainContentPost postData={postData} />}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import MainContentFooter from '../../CommonUI/MainContentFooter/MainContentFoote
 import MainContentPostsContainer from '../../CommonUI/MainContentPostsContainer/MainContentPostsContainer';
 import { sportsPostDiv, sportsPostDescript } from './index.module.css';
 
-export default function SportsPostMainContent() {
+export default function SportsPostMainContent({ postData }) {
   return (
     <>
       <MainContentFixedHeader category='스포츠 생각' />
@@ -12,7 +12,7 @@ export default function SportsPostMainContent() {
         <div className={sportsPostDiv}>🐌 꾸준한 운동 달팽이</div>
         <div className={sportsPostDescript}>직접 뛰고, 본 운동을 기록합니다</div>
       </MainContentCategoryExplain>
-      <MainContentPostsContainer mainContentType='sportsPost' />
+      <MainContentPostsContainer mainContentType='sportsPost' postData={postData} />
       <MainContentFooter />
     </>
   );

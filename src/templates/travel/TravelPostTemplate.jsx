@@ -4,7 +4,7 @@ import MainContent from '../../components/main-content/main-content';
 export default function TravelPostTemplate({ pageContext }) {
   return (
     <Layout>
-      <MainContent pageCategory='travelPost' />
+      <MainContent pageCategory='travelPost' postData={pageContext} />
     </Layout>
   );
 }

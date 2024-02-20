@@ -1,0 +1,15 @@
+.detailPostThumbnailImageContainer {
+  flex-shrink: 0;
+  width: 40%;
+  margin-bottom: 20px;
+}
+
+.detailPostThumbnailImage {
+  border-radius: 10%;
+}
+
+@media screen and (max-width: 768px) {
+  .detailPostThumbnailImageContainer {
+    width: 60%;
+  }
+}

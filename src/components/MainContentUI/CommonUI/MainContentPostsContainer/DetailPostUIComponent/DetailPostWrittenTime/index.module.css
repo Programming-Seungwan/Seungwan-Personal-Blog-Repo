@@ -1,0 +1,25 @@
+.detailPostWrittenTime {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 9px;
+  color: #aaaaaa;
+  margin-bottom: 20px;
+  padding: 0 10%;
+}
+
+.detailPostWrittenTime::before {
+  background: #aaaaaa;
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+}
+
+.detailPostWrittenTime::after {
+  background: #aaaaaa;
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+}
