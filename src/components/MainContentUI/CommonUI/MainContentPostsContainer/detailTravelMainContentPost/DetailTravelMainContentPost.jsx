@@ -6,7 +6,6 @@ import DetailPostTags from '../DetailPostUIComponent/DetailPostTags/DetailPostTa
 import DetailPostTravelInfoContainer from '../DetailPostUIComponent/DetailPostTravel/DetailPostTravelInfoContainer/DetailPostTravelInfoContainer';
 
 export default function DetailTravelMainContentPost({ postData }) {
-  console.log(postData);
   return (
     <>
       <DetailPostTitle postTitle={postData.title}></DetailPostTitle>

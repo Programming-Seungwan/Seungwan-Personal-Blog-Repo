@@ -1,4 +1,3 @@
-import { useStaticQuery, graphql } from 'gatsby';
 import DetailPostTitle from '../DetailPostUIComponent/DetailPostTitle/DetailPostTitle';
 import DetailPostWrittenTime from '../DetailPostUIComponent/DetailPostWrittenTime/DetailPostWrittenTime';
 import DetailPostThumbnailImage from '../DetailPostUIComponent/DetailPostThumbnailImage/DetailPostThumbnailImage';

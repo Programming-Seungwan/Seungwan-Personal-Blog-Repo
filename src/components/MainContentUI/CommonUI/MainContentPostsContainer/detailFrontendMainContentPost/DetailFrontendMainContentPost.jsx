@@ -5,7 +5,6 @@ import DetailPostContent from '../DetailPostUIComponent/DetailPostContent/Detail
 import DetailPostTags from '../DetailPostUIComponent/DetailPostTags/DetailPostTags';
 
 export default function DetailFrontendMainContentPost({ postData }) {
-  console.log(postData);
   return (
     <>
       <DetailPostTitle postTitle={postData.title} />
