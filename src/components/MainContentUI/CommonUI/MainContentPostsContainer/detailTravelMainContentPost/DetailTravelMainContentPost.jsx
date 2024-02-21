@@ -4,16 +4,17 @@ import DetailPostThumbnailImage from '../DetailPostUIComponent/DetailPostThumbna
 import DetailPostContent from '../DetailPostUIComponent/DetailPostContent/DetailPostContent';
 import DetailPostTags from '../DetailPostUIComponent/DetailPostTags/DetailPostTags';
 import DetailPostTravelInfoContainer from '../DetailPostUIComponent/DetailPostTravel/DetailPostTravelInfoContainer/DetailPostTravelInfoContainer';
+import DetailPostContainer from '../DetailPostUIComponent/DetailPostContainer/DetailPostContainer';
 
 export default function DetailTravelMainContentPost({ postData }) {
   return (
-    <>
+    <DetailPostContainer>
       <DetailPostTitle postTitle={postData.title}></DetailPostTitle>
       <DetailPostWrittenTime postWrittenTime={postData.writtenTime} />
       <DetailPostTravelInfoContainer postIsAbroad={postData.isAbroad} postCity={postData.city} />
       <DetailPostThumbnailImage postImageSrc={postData.thumbnailImage.gatsbyImageData.images.fallback.src} />
       <DetailPostContent postContent={postData.travelPostContent.raw} />
       <DetailPostTags postTagsArray={postData.tagsJson.tags} />
-    </>
+    </DetailPostContainer>
   );
 }

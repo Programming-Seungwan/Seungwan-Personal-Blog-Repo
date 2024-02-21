@@ -4,16 +4,17 @@ import DetailPostThumbnailImage from '../DetailPostUIComponent/DetailPostThumbna
 import DetailPostContent from '../DetailPostUIComponent/DetailPostContent/DetailPostContent';
 import DetailPostTags from '../DetailPostUIComponent/DetailPostTags/DetailPostTags';
 import DetailPostTechTopic from '../DetailPostUIComponent/DetailPostTechTopic/DetailPostTechTopic';
+import DetailPostContainer from '../DetailPostUIComponent/DetailPostContainer/DetailPostContainer';
 
 export default function DetailTechMainContentPost({ postData }) {
   return (
-    <>
+    <DetailPostContainer>
       <DetailPostTitle postTitle={postData.title} />
       <DetailPostWrittenTime postWrittenTime={postData.writtenTime} />
       <DetailPostTechTopic postTopic={postData.topic} />
       <DetailPostThumbnailImage postImageSrc={postData.thumbnailImage.gatsbyImageData.images.fallback.src} />
       <DetailPostContent postContent={postData.techPostContent.raw} />
       <DetailPostTags postTagsArray={postData.tagsJson.tags} />
-    </>
+    </DetailPostContainer>
   );
 }
