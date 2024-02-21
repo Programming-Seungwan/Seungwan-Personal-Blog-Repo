@@ -35,8 +35,10 @@
 
 8. css 배포를 한 뒤에 개발 환경에서는 적용되지만, 배포 환경에서는 나타나지 않는 문제 => netlify가 CDN을 이용한 배포 툴이기 떄문에 캐싱된 것이 갱신되지 않음 : netlify에서 clear cache and trigger new deploy를 해주면됨(해결 완료)
 9. /sports 관련 url 에서 포스팅 카드 UI를 보여줄 때 일부 이미지들이 너무 커보이는 문제가 발생함
-10. pre-render를 해준 각 페이지의 컴포넌트에서 pageContext 속성을 통해서 넘겨주기는 했으나, 일단은 컴포넌트 차원에서 url param를 따와서 이를 기반으로 slug 관련 graphQL 쿼리를 해줘서 UI를 만들어주는 것이 좋지 않을까 싶음.
+10. pre-render를 해준 각 페이지의 컴포넌트에서 pageContext 속성을 통해서 넘겨주기는 했으나, 일단은 컴포넌트 차원에서 url param를 따와서 이를 기반으로 slug 관련 graphQL 쿼리를 해줘서 UI를 만들어주는 것이 좋지 않을까 싶음 => 그냥 처음에 gatsby-node.js 파일에서 빌드 시에 graphQl로 날려서 얻은 post 관련 데이터를 pageContext로 받아, 필요한 곳까지 prop drilling 방식으로 넘겨줌
 11. 카테고리 별로 sports, frontend, tech, travel에 따라서 컨텐츠가 조금씩 다르므로 각각의 UI를 만들어주는 것이 필요하다. 즉 post 컴포넌트 디렉터리를 새로 파고, 거기에 원하는 UI를 만드는 컴포넌트를 생성하여 필요할 때마다 데이터를 prop으로 넘기는 방식으로 UI를 세로로 구성하는 것이 좋아보인다 => DetailPostComponents 디렉터리에 각각 필요한 것들을 위치시킴
+
+12. 각 상세 포스트 페이지를 모바일 디바이스에서 접속하면 고정적으로 스크롤되지 않고 옆으로 이리저리 흔들이는 현상이 발생함
 
 ## 페이지들 구현 명세
 
