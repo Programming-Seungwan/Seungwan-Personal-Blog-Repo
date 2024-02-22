@@ -22,5 +22,6 @@ module.exports = {
     'gatsby-plugin-mdx',
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
+    'gatsby-plugin-react-helmet',
   ],
 };

@@ -79,3 +79,4 @@
 2. description
 3. og : description, locale, type, title, description, image
 4. twitter: card, title, description, image
+5. canonical : 페이지마다 달라짐 --> react-helmet을 이용해 작성
