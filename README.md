@@ -38,7 +38,7 @@
 10. pre-render를 해준 각 페이지의 컴포넌트에서 pageContext 속성을 통해서 넘겨주기는 했으나, 일단은 컴포넌트 차원에서 url param를 따와서 이를 기반으로 slug 관련 graphQL 쿼리를 해줘서 UI를 만들어주는 것이 좋지 않을까 싶음 => 그냥 처음에 gatsby-node.js 파일에서 빌드 시에 graphQl로 날려서 얻은 post 관련 데이터를 pageContext로 받아, 필요한 곳까지 prop drilling 방식으로 넘겨줌
 11. 카테고리 별로 sports, frontend, tech, travel에 따라서 컨텐츠가 조금씩 다르므로 각각의 UI를 만들어주는 것이 필요하다. 즉 post 컴포넌트 디렉터리를 새로 파고, 거기에 원하는 UI를 만드는 컴포넌트를 생성하여 필요할 때마다 데이터를 prop으로 넘기는 방식으로 UI를 세로로 구성하는 것이 좋아보인다 => DetailPostComponents 디렉터리에 각각 필요한 것들을 위치시킴
 
-12. 각 상세 포스트 페이지를 모바일 디바이스에서 접속하면 고정적으로 스크롤되지 않고 옆으로 이리저리 흔들이는 현상이 발생함
+12. 각 상세 포스트 페이지를 모바일 디바이스에서 접속하면 고정적으로 스크롤되지 않고 옆으로 이리저리 흔들이는 현상이 발생함 => DetailPostContainer의 마진과 패딩을 갖는 컴포넌트를 각 카테고리별 상세 포스트 페이지마다 감싸줌으로써 해결(해결 완료)
 
 ## 페이지들 구현 명세
 
@@ -67,3 +67,15 @@
 - travel post : title, slug, written time, Thumbnail Image, travel post content, tags Json, isAbroad(boolean), city
 - tech post : title, slug, written time, category(algorithm, OS, backend), Thumbnail Image(not required), tech post content, tag Json,
 - 공통적으로 post가 가지는 속성들 : title, slug, written time, updatedAt, Thumbnail Image, categoryContent-raw, tagsJson
+
+# 개인 블로그 검색 엔진 최적화(SEO) 방식
+
+1. Gatsby Head API를 활용 vs React helmet(플러그인 활용) 방식
+2. siteMap.xml 파일 using 플러그인 이용 & robot.txt 파일을 이용하기
+
+## 만들어줘야 하는 메타 태그
+
+1. title
+2. description
+3. og : description, locale, type, title, description, image
+4. twitter: card, title, description, image

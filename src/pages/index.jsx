@@ -10,4 +10,4 @@ export default function IndexPage() {
   );
 }
 
-export const Head = () => <Seo title='Home Page'></Seo>;
+export const Head = () => <Seo title='Seungan Life Record'></Seo>;

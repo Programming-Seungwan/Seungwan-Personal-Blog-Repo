@@ -12,9 +12,12 @@ const Seo = ({ title }) => {
   `);
 
   return (
-    <title>
-      {title} | {data.site.siteMetadata.title}
-    </title>
+    <>
+      <title>
+        {data.site.siteMetadata.title} | {title}
+      </title>
+      <link rel='icon' href='/images/blog-favicon.png' type='imgae/png'></link>
+    </>
   );
 };
 

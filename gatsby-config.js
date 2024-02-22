@@ -4,7 +4,7 @@ require('dotenv').config();
  */
 module.exports = {
   siteMetadata: {
-    title: `Seungwan Personal Blog`,
+    title: `김승완 블로그`,
     siteUrl: `https://seungwan-blog.netlify.app/`,
   },
   plugins: [
