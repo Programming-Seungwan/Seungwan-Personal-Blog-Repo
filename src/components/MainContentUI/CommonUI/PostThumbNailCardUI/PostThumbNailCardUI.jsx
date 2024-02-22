@@ -1,4 +1,5 @@
 import moment from 'moment';
+import { useState, useEffect } from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import {
@@ -35,14 +36,18 @@ export default function PostThumbNailCardUI({
   };
 
   const postContent = JSON.parse(thumbnailContent);
+  const [writtenTimeUI, setWrittenTimeUI] = useState(null);
+
+  useEffect(() => {
+    setWrittenTimeUI(moment(writtenTime).format('MMM Do YY'));
+  }, []);
 
   return (
     <div className={postThumbNailCardContainer}>
       <div className={postThumbNailCardTitle}>{title}</div>
-      <div className={postThumbNailCardWrittenDate}>{moment(writtenTime).format('MMM Do YY')}</div>
+      <div className={postThumbNailCardWrittenDate}>{writtenTimeUI}</div>
       <div className={postThumbNailCardPreviewThumbnail}>
         <div className={previewImage}>
-          {/* <GatsbyImage image={image} alt={`This is ${slug} thumbnail image`} /> */}
           <img src={thumbnailImageSrc} alt='this is thumbnailImage' />
         </div>
         <div className={previewSummaryAndTagsContainer}>
