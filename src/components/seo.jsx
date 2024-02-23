@@ -16,7 +16,7 @@ const Seo = ({ title }) => {
       <title>
         {data.site.siteMetadata.title} | {title}
       </title>
-      <link rel='icon' href='/images/blog-favicon.png' type='imgae/png'></link>
+      <link rel='icon' href='/images/blog-favicon.png' type='image/png'></link>
     </>
   );
 };
