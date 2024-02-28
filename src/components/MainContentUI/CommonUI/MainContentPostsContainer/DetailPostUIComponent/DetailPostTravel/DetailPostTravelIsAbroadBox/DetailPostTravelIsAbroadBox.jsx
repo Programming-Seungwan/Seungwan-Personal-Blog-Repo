@@ -1,3 +1,5 @@
+import { isAbroadBox } from './index.module.css';
+
 export default function DetailPostTravelIsAbroadBox({ postIsAbroad }) {
-  return <div>{postIsAbroad === true ? '해외' : '국내'}</div>;
+  return <div className={isAbroadBox}>{postIsAbroad === true ? '해외' : '국내'}</div>;
 }
