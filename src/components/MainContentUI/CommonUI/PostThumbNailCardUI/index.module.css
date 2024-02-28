@@ -88,6 +88,7 @@
   -webkit-box-orient: vertical;
   text-align: justify;
   overflow-wrap: anywhere;
+  font-weight: 600;
 }
 
 .previewTags ul {
@@ -103,4 +104,5 @@
   background-color: #efeded;
   padding: 3px 5px;
   border-radius: 10%;
+  font-weight: 500;
 }

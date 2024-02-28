@@ -57,7 +57,7 @@ export default function PostThumbNailCardUI({
               {tagsList.map((tag) => {
                 return (
                   <p key={tag} className={hashtag}>
-                    #{tag}
+                    # {tag}
                   </p>
                 );
               })}
